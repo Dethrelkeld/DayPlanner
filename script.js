@@ -1,7 +1,8 @@
 $(document).ready(function () {
     var currentTime = luxon.DateTime.local();
     console.log(currentTime);
-
+    
+    // A button to save the information
     $(".save-button").on("click", function () {
         var task = $(this).siblings(".description").val().trim();
         console.log(task);
@@ -21,12 +22,14 @@ $(document).ready(function () {
             // compare real time to time slot 
             if (luxonHour < calendarHour) {
                 // add class of past
+                $(this).addClass("past")
             } else if (luxonHour === calendarHour) {
                 // add class of present
                 $(this).addClass("present")
             }
             else {
                 // add class of future
+                $(this).addClass("future")
             }
 
         });
