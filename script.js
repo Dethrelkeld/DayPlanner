@@ -1,9 +1,10 @@
 $(document).ready(function () {
+    // luxon api used to get time
     var currentTime = luxon.DateTime.local();
     console.log(currentTime);
-    
+
     // A button to save the information
-    $(".save-button").on("click", function () {
+    $(".saveBtn").on("click", function () {
         var task = $(this).siblings(".description").val().trim();
         console.log(task);
         var hour = $(this).parent().attr("id");
@@ -12,12 +13,13 @@ $(document).ready(function () {
 
 
     })
+
+    // check if the row is past, present or future by comparing to the api's hour value
     function checkHour() {
       var luxonHour = luxon.DateTime.local().hour;
       console.log(luxonHour);
         $(".row").each(function () {
             var calendarHour = parseInt($(this).attr("id").split("-")[1]);
-            console.log(calendarHour);
             
             // compare real time to time slot 
             if (luxonHour < calendarHour) {
