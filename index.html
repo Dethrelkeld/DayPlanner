@@ -20,11 +20,13 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
+  <!-- Day Planner in here -->
   <div class="container">
     <div class="row" id="hour-9">
       <div class="col-md-1 time">
         <p>0900</p>
       </div>
+      <!-- Each row is an hour time slot -->
       <textarea class="col-md-10 description"></textarea>
       <button class="col-md-1 saveBtn">Save</button>
     </div>
@@ -92,7 +94,7 @@
       <button class="col-md-1 saveBtn">Save</button>
     </div>
   </div>
-
+<!-- links for jquery, luxon's time api and the javascript file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
   <script
